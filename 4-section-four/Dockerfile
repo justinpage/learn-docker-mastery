@@ -43,11 +43,12 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package.json package.json
 RUN npm install && npm cache clean --force
-COPY app.js app.js 
-COPY bin/ ./bin/
-COPY public/ ./public/
-COPY routes/ ./routes/
-COPY views/ ./views/
+# COPY app.js app.js 
+# COPY bin/ ./bin/
+# COPY public/ ./public/
+# COPY routes/ ./routes/
+# COPY views/ ./views/
+COPY . .
 RUN ls -la ./ 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["node", "./bin/www"]
