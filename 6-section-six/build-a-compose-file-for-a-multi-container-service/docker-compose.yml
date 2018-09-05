@@ -13,7 +13,6 @@ services:
             - drupal-themes:/var/www/html/themes
         depends_on:
             - postgres
-
     postgres:
         image: postgres:9.6
         environment:
